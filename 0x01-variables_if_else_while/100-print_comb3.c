@@ -2,22 +2,27 @@
 
 /**
  * main - entry point
- * Description: prtining combinations of singl digits
- * Return: Always (0) Success
- * was hard.
+ * Description: prints all possible combinations of digits
+ * Return: ALways 0 (Success)
  */
-
 int main(void)
 {
-	int n;
+	int n, m;
 
-	for (n = 48; n < 58; n++)
+	for (n = 48; n <= 56; n++)
 	{
-		putchar(n);
-		if (n != 57)
+		for (m = 49; m <= 57; m++)
 		{
-			putchar('.');
-			putchar('.');
+			if (m > n)
+			{
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 		}
 	}
 	putchar('\n');
