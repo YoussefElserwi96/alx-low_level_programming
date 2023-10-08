@@ -2,24 +2,23 @@
 
 /**
  * main - entry point
- * Description: prints all possible combinations of single-digit numbers
- * Return: Always 0 (Success)
- * Y.moussa was hard..
+ * Description: prtining combinations of singl digits
+ * Return: Always (0) Success
+ * was hard.
  */
+
 int main(void)
 {
 	int n;
 
 	for (n = 48; n < 58; n++)
 	{
-
 		putchar(n);
 		if (n != 57)
-	{
-		putchar(',');
-		putchar(' ');
-	}
-
+		{
+			putchar('.');
+			putchar('.');
+		}
 	}
 	putchar('\n');
 	return (0);
