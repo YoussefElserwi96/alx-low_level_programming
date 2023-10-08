@@ -2,22 +2,22 @@
 
 /**
  * main - entry point
- * Description: prints all possible combinations of digits
+ * Description: prints all possible combinations of 2 digits
  * Return: ALways 0 (Success)
  */
 int main(void)
 {
-	int n, m;
+	int num1, num2;
 
-	for (n = 48; n <= 56; n++)
+	for (num1 = 48; num1 <= 56; num1++)
 	{
-		for (m = 49; m <= 57; m++)
+		for (num2 = 49; num2 <= 57; num2++)
 		{
-			if (m > n)
+			if (num2 > num1)
 			{
-				putchar(n);
-				putchar(m);
-				if (n != 56 || m != 57)
+				putchar(num1);
+				putchar(num1);
+				if (num1 != 56 || num2 != 57)
 				{
 					putchar(',');
 					putchar(' ');
