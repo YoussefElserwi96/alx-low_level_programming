@@ -2,7 +2,7 @@
 
 /**
  * main - entry point
- * Description: prints all possible combinations of 2 digits
+ * Description: prints all possible different combinations of 2 digits
  * Return: ALways 0 (Success)
  */
 int main(void)
@@ -16,7 +16,7 @@ int main(void)
 			if (num2 > num1)
 			{
 				putchar(num1);
-				putchar(num1);
+				putchar(num2);
 				if (num1 != 56 || num2 != 57)
 				{
 					putchar(',');
