@@ -3,14 +3,13 @@
 #include <stdio.h>
 
 /**
- * main - entry point
- * description: printing last digit, sotring it in "n"
- * Return: 0 Always (success)
+ * main - prints the last digit and stores in "n"
+ * uses if - else loops with operators
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int n;
+		int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
@@ -19,8 +18,7 @@ int main(void)
 		printf("and is greater than 5\n");
 	else if (n % 10 == 0)
 		printf("and is 0\n");
-	else if (n % 10 < 6 && % 10 != 0)
+	else if (n % 10 < 6 && n % 10 != 0)
 		printf("and is less than 6 and not 0\n");
-
 	return (0);
 }
