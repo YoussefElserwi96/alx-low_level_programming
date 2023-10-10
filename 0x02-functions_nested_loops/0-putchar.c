@@ -8,12 +8,14 @@
 
 int main(void)
 {
-	char str[] = "_putchar";
-	int ch;
+	char putChar[] = "_putchar";
+	int num;
 
-	for (ch = 0; ch < 8; ch++)
-		_putchar(str[ch]);
-		_putchar('\n');
-
-		return (0);
+	for (num = 0; num <= 7; num++)
+	{
+		putchar(putChar[num]);
+	}
+	
+	putchar('\n');
+	return (0);
 }
