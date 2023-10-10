@@ -6,14 +6,7 @@
  * Return: 1 if c is a letter, 0 otherwise
  */
 
-int print_sign(int num)
+int _isalpha(int c)
 {
-	if ((num >= 'a' && num <= 'z') || (num >= 'A' && num <= 'Z'))
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
