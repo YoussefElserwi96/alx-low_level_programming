@@ -1,42 +1,42 @@
+#include "main.h"
+
 /**
- * print_times_table - print times table starting from 0
+ * print_times_table - Prints the n times tables
+ * @mnum: number times table
+ *
+ * Return: no return
  */
-
-void print_times_table(int n)
+void print_times_table(int mnum)
 {
-	int row, colom, result;
+	int rows, coloms, result;
 
-	if (n >= 0 && n <= 15)
+	if (mnum >= 0 && mnum <= 15)
 	{
-		for (row = 0; row <= n; row++)
+		for (rows = 0; rows <= mnum; rows++)
 		{
-			for (colom = 0; colom <= n; colom++)
+			_putchar(48);
+			for (coloms = 1; coloms <= mnum; coloms++)
 			{
-				result = colom * row;
-				if (colom == 0)
+				result = rows * coloms;
+				_putchar(44);
+				_putchar(32);
+				if (result <= 9)
 				{
-					_putchar(result + '0');
-				} else if (result < 10 && colom != 0)
+					_putchar(32);
+					_putchar(32);
+					_putchar(result + 48);
+				}
+				else if (result <= 99)
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(result + '0');
-				} else if (result >= 10 && result < 100)
+					_putchar(32);
+					_putchar((result / 10) + 48);
+					_putchar((result % 10) + 48);
+				}
+				else
 				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((result / 10) + '0');
-					_putchar((result % 10) + '0');
-				} else if (result >= 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar((result / 100) + '0');
-					_putchar(((result / 10) % 10) + '0');
-					_putchar((result % 10) + '0');
+					_putchar(((result / 100) % 10) + 48);
+					_putchar(((result / 10) % 10) + 48);
+					_putchar((result % 10) + 48);
 				}
 			}
 			_putchar('\n');
