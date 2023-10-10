@@ -1,10 +1,9 @@
 #include "main.h"
 
-/*
-* main - entry point
-* Description : print the alhpabet
-* Return: Always 0 (success)
-*/
+/**
+ * print_alphabet - entry point. printing from a to z
+ * Return: 0 Always (success)
+ */
 
 void print_alphabet(void)
 {
