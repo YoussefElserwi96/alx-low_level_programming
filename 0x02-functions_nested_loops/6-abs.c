@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _abs - computes the absolute value of an integer
- * @num : Given number to cehck
+ * _abs - computes the value of an integer
+ * @num : to be checked
  * Return: Always 0 (Success)
  */
 int _abs(int num1)
