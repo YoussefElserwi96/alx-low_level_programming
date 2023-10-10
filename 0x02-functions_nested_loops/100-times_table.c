@@ -2,39 +2,44 @@
  * print_times_table - print times table starting from 0
  */
 
-void print_times_table(int givenNumber)
+void print_times_table(int n)
 {
-	int rows, coloms, sum;
+	int row, colom, result;
 
-	if (givenNumber < 0 || givenNumber > 15)
-		return;
-
-	for (rows = 0; rows <= givenNumber; rows++)
+	if (n >= 0 && n <= 15)
 	{
-		for (coloms = 0; coloms <= givenNumber; coloms++)
+		for (row = 0; row <= n; row++)
 		{
-			sum = rows * coloms;
-
-			if (coloms == 0)
-				_putchar('0');
-			else
+			for (colom = 0; colom <= n; colom++)
 			{
-				_putchar(',');
-				_putchar(' ');
-
-				if (sum < 10)
+				result = colom * row;
+				if (colom == 0)
+				{
+					_putchar(result + '0');
+				} else if (result < 10 && colom != 0)
+				{
+					_putchar(',');
 					_putchar(' ');
-				if (sum < 100)
 					_putchar(' ');
-
-				if (sum >= 100)
-					_putchar(sum / 100 + '0');
-				if (sum >= 10)
-					_putchar((sum / 10) % 10 + '0');
-
-				_putchar(sum % 10 + '0');
+					_putchar(' ');
+					_putchar(result + '0');
+				} else if (result >= 10 && result < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((result / 10) + '0');
+					_putchar((result % 10) + '0');
+				} else if (result >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((result / 100) + '0');
+					_putchar(((result / 10) % 10) + '0');
+					_putchar((result % 10) + '0');
+				}
 			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
