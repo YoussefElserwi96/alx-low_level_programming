@@ -4,6 +4,7 @@
 /**
  * main - finding printing the largest prime factor of the number 612852475143
  * followed by a new line
+ * using the math.h library
  * Return: Always 0 (Success)
  */
 
