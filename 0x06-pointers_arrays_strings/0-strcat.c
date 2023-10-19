@@ -6,20 +6,18 @@
  * @src: string to append to dest
  * Return: Pointer to the result
  */
+
 char *_strcat(char *dest, char *src)
 {
-	int dest_length = -1, src_index;
+int d_length = -1, s_index;
+for (s_index = 0; dest[s_index] != '\0'; s_index++)
+;
 
-	for (src_index = 0; dest[src_index] != '\0'; src_index++)
-	{
-		dest_length++;
-	}
+do {
+	d_length++;
+	dest[s_index] = src[d_length];
+	s_index++;
+} while (src[d_length] != '\0');
 
-	do {
-		dest_length++;
-		dest[dest_length] = src[src_index];
-		src_index++;
-	} while (src[src_index] != '\0');
-
-	return (dest);
+return (dest);
 }
