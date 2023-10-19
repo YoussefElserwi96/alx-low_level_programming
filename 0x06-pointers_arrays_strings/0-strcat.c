@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_strcat - a func that concatenates two strings
+ * _strcat - a func that concatenates two strings
  * @dest: string where src will be appended
  * @src: string to append to dest
  * Return: Pointer to the result
@@ -21,5 +21,5 @@ char *_strcat(char *dest, char *src)
 		src_index++;
 	} while (src[src_index] != '\0');
 
-	return dest;
+	return (dest);
 }
