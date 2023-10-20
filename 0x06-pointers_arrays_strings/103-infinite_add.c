@@ -5,13 +5,13 @@
  * @str: the input string to reverse
  * Return: void
  */
-void rev_string(char *str)
+void rev_string(char *n)
 {
 	int start = 0;
 	int end = 0;
 	char temp;
 
-	while (*(str + end) != '\0')
+	while (*(n + end) != '\0')
 	{
 		end++;
 	}
@@ -19,9 +19,9 @@ void rev_string(char *str)
 
 	for (start = 0; start < end; start++, end--)
 	{
-		temp = *(str + start);
-		*(str + start) = *(str + end);
-		*(str + end) = temp;
+		temp = *(n + start);
+		*(n + start) = *(n + end);
+		*(n + end) = temp;
 	}
 }
 
