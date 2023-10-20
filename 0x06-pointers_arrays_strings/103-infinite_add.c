@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *  rev_string - a func to reverse arrays
+ * rev_string - a func to reverse arrays
  * @str: the input string to reverse
  * Return: void
  */
