@@ -1,78 +1,52 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * rev_string - a func to reverse arrays
- * @str: the input string to reverse
- * Return: void
- */
-
-void rev_string(char *n)
-{
-	int start = 0;
-	int end = 0;
-	char temp;
-
-	while (*(n + start) != '\0')
-	{
-		start++;
-	}
-	start--;
-
-	for (end = 0; end < start; end++, start--)
-	{
-		temp = *(n + end);
-		*(n + end) = *(n + start);
-		*(n + start) = temp;
-	}
-}
-
-/**
- * infinite_add - add 2 numbers together
- * @n1: text representation of 1st number to add
- * @n2: text representation of 2nd number to add
- * @r: pointer to buffer
- * @size_r: buffer size
- * Return: pointer to calling function
+ * infinite_add - a function that adds two numbers.
+ * @r: buffer that the function will use to store the result.
+ * @size_r: buffer size:
+ * Return: the pointer to dest.
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carrying = 0, i = 0, j = 0, digits = 0;
-	int value1 = 0, value2 = 0, temptotal = 0;
+	int len1 = 0, len2 = 0, op, cr, d1, d2, add = 0;
 
-	while (*(n1 + i) != '\0')
-		i++;
-	while (*(n2 + j) != '\0')
-		j++;
-	i--;
-	j--;
-	if (j >= size_r || i >= size_r)
+	while (*(n1 + len1) != '\0')
+		len1++;
+	while (*(n2 + len2) != '\0')
+		len2++;
+	if (len1 >= len2)
+		cr = len1;
+	else
+		cr = len2;
+	if (size_r <= cr + 1)
 		return (0);
-	while (j >= 0 || i >= 0 || carrying == 1)
+	r[cr + 1] = '\0';
+	len1--, len2--, size_r--;
+	d1 = *(n1 + len1) - 48, d2 = *(n2 + len2) - 48;
+	while (cr >= 0)
 	{
-		if (i < 0)
-			value1 = 0;
+		op = d1 + d2 + add;
+		if (op >= 10)
+			add = op / 10;
 		else
-			value1 = *(n1 + i) - '0';
-		if (j < 0)
-			value2 = 0;
+			add = 0;
+		if (op > 0)
+		*(r + cr) = (op % 10) + 48;
 		else
-			value2 = *(n2 + j) - '0';
-		temptotal = value1 + value2 + carrying;
-		if (temptotal >= 10)
-			carrying = 1;
+			*(r + cr) = '0';
+		if (len1 > 0)
+			len1--, d1 = *(n1 + len1) - 48;
 		else
-			carrying = 0;
-		if (digits >= (size_r - 1))
-			return (0);
-		*(r + digits) = (temptotal % 10) + '0';
-		digits++;
-		j--;
-		i--;
+			d1 = 0;
+		if (len2 > 0)
+			len2--, d2 = *(n2 + len2) - 48;
+		else
+			d2 = 0;
+		cr--, size_r--;
 	}
-	if (digits == size_r)
-		return (0);
-	*(r + digits) = '\0';
-	rev_string(r);
-	return (r);
+	if (*(r) == '0')
+		return (r + 1);
+	else
+		return (r);
 }
